@@ -39,20 +39,20 @@ To store input-features, navigate to the folder "EGAT/inputs". In this folder, f
   > prediction = output['pred']  
   > protein_index = 0  
   > print(prediction[protein_index])  
-  In the above commands, "protein_index" represents the index of the protein-name in the "protein_list.txt" file. (You can set it to any number, e.g: for the protein-name at index 2 (third row of the "protein_list.txt" file), set protein_index=2).  
-  These commands will print the predicted numeric propensities of all the residues in the protein at index "0" of "protein_list.txt" file. The propensities will be printed sequentially following the order of the residues in the input PDB file of this protein.  
+In the above commands, "protein_index" represents the index of the protein-name in the "protein_list.txt" file. (You can set it to any number, e.g: for the protein-name at index 2 (third row of the "protein_list.txt" file), set protein_index=2).  
+These commands will print the predicted numeric propensities of all the residues in the protein at index "0" of "protein_list.txt" file. The propensities will be printed sequentially following the order of the residues in the input PDB file of this protein.  
   
   b. To access general information about the input proteins, please run the following commands:  
   > protein_information = output['protein_info']  
   > protein_index = 0  
-  > print(protein_information[protein_index])  
-  These commands will print a [*python dictionary*](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) corresponding to the protein at index "0" of "protein_list.txt" file. This python dictionary contains the number of residues in the protein (represented with the key 'seq_length' in this dictionary).  
+  > print(protein_information[protein_index])    
+These commands will print a [*python dictionary*](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) corresponding to the protein at index "0" of "protein_list.txt" file. This python dictionary contains the number of residues in the protein (represented with the key 'seq_length' in this dictionary).  
   
   c. To access the edges of the graphs representions of the input proteins, please run the following commands:  
   > graph_edges = output['edges']  
   > protein_index = 0  
   > print(graph_edges[protein_index])  
-  These commands will print a [*numpy array*](https://numpy.org/doc/stable/reference/generated/numpy.array.html) corresponding to the protein at index "0" of "protein_list.txt" file. Each row of this *numpy array* corresponds to a *neighborhood*, that contains the indices of the neighboring nodes (residues) of one residue (i.e. *the center of the neighborhood*). (please see [our paper]() for more details). This *center of the neighborhood* is the row count of the matrix. The following example command will print the *neighborhood* (neighboring residue indices) of the residue with index *2* -  
+These commands will print a [*numpy array*](https://numpy.org/doc/stable/reference/generated/numpy.array.html) corresponding to the protein at index "0" of "protein_list.txt" file. Each row of this *numpy array* corresponds to a *neighborhood*, that contains the indices of the neighboring nodes (residues) of one residue (i.e. *the center of the neighborhood*). (please see [our paper]() for more details). This *center of the neighborhood* is the row count of the matrix. The following example command will print the *neighborhood* (neighboring residue indices) of the residue with index *2* -  
   > center_node = 2  
   > print(graph_edges[protein_index][center_node])  
   
@@ -60,7 +60,7 @@ To store input-features, navigate to the folder "EGAT/inputs". In this folder, f
   > attention_scores = output['attention_scores']  
   > protein_index = 0  
   > print(attention_scores[protein_index])  
-  These commands will print a [*numpy array*](https://numpy.org/doc/stable/reference/generated/numpy.array.html) corresponding to the protein at index "0" of "protein_list.txt" file. Each row of this *numpy array* contains the attention scores associated with the corresponding edge. In the following example command, *center of the neighborhood* is the residue at position *2*. This command will print the attention scores associated with the edges from its neighboring residues (nodes) to this residue-  
+These commands will print a [*numpy array*](https://numpy.org/doc/stable/reference/generated/numpy.array.html) corresponding to the protein at index "0" of "protein_list.txt" file. Each row of this *numpy array* contains the attention scores associated with the corresponding edge. In the following example command, *center of the neighborhood* is the residue at position *2*. This command will print the attention scores associated with the edges from its neighboring residues (nodes) to this residue-  
   > center_node = 2  
   > print(attention_scores[protein_index][center_node])  
   
