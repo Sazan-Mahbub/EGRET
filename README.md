@@ -7,8 +7,8 @@ If you use any part of this repository, we shall be obliged if you site our pape
 ## Pytorch and DGL installation
 We implemented our method using PyTorch and Deep Graph Library (DGL). Please install these two for successfully running our code. Necessary installation instructions are available at the following links-
 1. [Python 3.6 or later version](https://www.python.org/downloads/)
-1. [PyTorch](https://pytorch.org/get-started/locally/#start-locally)
-2. [Deep Graph Library](https://www.dgl.ai/pages/start.html)
+2. [PyTorch](https://pytorch.org/get-started/locally/#start-locally)
+3. [Deep Graph Library](https://www.dgl.ai/pages/start.html)
 
 ## Download pretrained-model weights:
 ### ProtBERT model weight
@@ -39,7 +39,7 @@ python run_egat.py
   output = pickle.load(open('EGAT/outputs/prediction_and_attention_scores.pkl', 'rb'))
   ```
 2. Now the "output" variable is a dictionary with the four keys: 'pred', 'protein_info', 'edges', 'attention_scores'.  
-  a. To access the predicted numeric propensity, please run the following commands:  
+  - To access the predicted numeric propensity, please run the following commands:  
     ```python
     prediction = output['pred']  
     protein_index = 0  
@@ -48,7 +48,7 @@ python run_egat.py
     In the above commands, "protein_index" represents the index of the protein-name in the "protein_list.txt" file. (You can set it to any number, e.g: for the protein-name at index 2 (third row of the "protein_list.txt" file), set protein_index=2).  
     These commands will print the predicted numeric propensities of all the residues in the protein at index "0" of "protein_list.txt" file. The propensities will be printed sequentially following the order of the residues in the input PDB file of this protein.  
 
-  b. To access general information about the input proteins, please run the following commands:  
+  - To access general information about the input proteins, please run the following commands:  
     ```python
     protein_information = output['protein_info']  
     protein_index = 0  
@@ -56,7 +56,7 @@ python run_egat.py
     ```
     These commands will print a [*python dictionary*](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) corresponding to the protein at index "0" of "protein_list.txt" file. This python dictionary contains the number of residues in the protein (represented with the key 'seq_length' in this dictionary).  
 
-  c. To access the edges of the graphs representions of the input proteins, please run the following commands:  
+  - To access the edges of the graphs representions of the input proteins, please run the following commands:  
     ```python
     graph_edges = output['edges']  
     protein_index = 0  
@@ -68,7 +68,7 @@ python run_egat.py
     print(graph_edges[protein_index][center_node])  
     ```
   
-  d. To access the attention scores associated with the edges, please run the following commands:  
+  - To access the attention scores associated with the edges, please run the following commands:  
     ```python
     attention_scores = output['attention_scores']  
     protein_index = 0  
