@@ -21,7 +21,7 @@ If you use this pretrained model for your paper, please cite the paper [ProtTran
 
 ## Input Data
 To store input-features, navigate to the folder "EGAT/inputs". In this folder, follow any of the following steps:
-1. Store the PDB files of the isolated proteins that shall be used for prediction in the folder "pdb_files". Rename the PDB files in the format: <an arbritary name>_<chain IDs>. Please see the example PDB files provided in this folder. Please provide the real chain IDs (as available in the PDB file) after the underscore ("_") correctly. (In the provided examples <an arbritary name> is the PDB ID of a complex in which this input protein is one of the subunits. It is not mendatory.)
+1. Store the PDB files of the isolated proteins that shall be used for prediction in the folder "pdb_files". Rename the PDB files in the format: "<an arbritary name>\_<chain IDs>". Please see the example PDB files provided in this folder. Please provide the real chain IDs (as available in the PDB file) after the underscore ("_") correctly. (In the provided examples <an arbritary name> is the PDB ID of a complex in which this input protein is one of the subunits. It is not mendatory.)
 2. List all the protein-names in the file "protein_list.txt"
 
 ## Run inference to predict numeric propensity (of each of the residues) for interaction
