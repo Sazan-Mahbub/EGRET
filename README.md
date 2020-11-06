@@ -38,7 +38,7 @@ python run_egat.py
   import pickle_
   output = pickle.load(open('EGAT/outputs/prediction_and_attention_scores.pkl', 'rb'))
   ```
-2. Now the "output" variable is a dictionary with the four keys: 'pred', 'protein_info', 'edges', 'attention_scores'.  
+2. In the above commands the *"output"* variable is a [*python dictionary*](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) (with the four keys: 'pred', 'protein_info', 'edges', 'attention_scores').  
   - To access the predicted numeric propensity, please run the following commands:  
     ```python
     prediction = output['pred']  
