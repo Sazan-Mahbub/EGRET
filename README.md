@@ -78,7 +78,7 @@ python run_egat.py
     ```python
     center_node = 2  
     print(attention_scores[protein_index][center_node])  
-  ```
-  
-  
-  
+    ```
+    
+# Citation
+*"EGAT: **E**dge Aggregated **G**raph **At**tention Networks and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*.
