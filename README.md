@@ -1,7 +1,6 @@
 # EGAT
 This repository contains the official implementation of our paper *"EGAT: **E**dge Aggregated **G**raph **At**tention Networks and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*.
-
-If you use any part of this repository, we shall be obliged if you site our paper.
+<!---If you use any part of this repository, we shall be obliged if you site our paper.--->
 
 # Usage
 ## Pytorch and DGL installation
@@ -80,5 +79,7 @@ python run_egat.py
     print(attention_scores[protein_index][center_node])  
     ```
     
+<!---
 # Citation
 *"EGAT: **E**dge Aggregated **G**raph **At**tention Networks and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*.
+--->
