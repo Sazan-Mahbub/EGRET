@@ -14,9 +14,9 @@ from config import DefaultConfig
 
 configs = DefaultConfig()
 
-class egat_ppi(nn.Module):
+class egret_ppi(nn.Module):
     def __init__(self, ratio=None):
-        super(egat_ppi, self).__init__()
+        super(egret_ppi, self).__init__()
         global configs
 
         ####
@@ -36,13 +36,13 @@ class egat_ppi(nn.Module):
             nn.Dropout(.5)  # it was .2
         )
 
-        from models import EdgeAggregatedGAT_attention_visual as egat
-        config_dict = egat.config_dict
+        from models import EdgeAggregatedGAT_attention_visual as egret
+        config_dict = egret.config_dict
         config_dict['feat_drop'] = 0.2
         config_dict['edge_feat_drop'] = 0.1
         config_dict['attn_drop'] = 0.2
 
-        self.gat_layer = egat.MultiHeadEGATLayer(
+        self.gat_layer = egret.MultiHeadEGRETLayer(
                                     in_dim=32,
                                     out_dim=32,
                                     edge_dim=2,

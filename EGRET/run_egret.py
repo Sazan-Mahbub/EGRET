@@ -17,7 +17,7 @@ import torch.utils.data.sampler as sampler
 import dgl
 
 from config import DefaultConfig
-from models.egat_attention_visual import egat_ppi
+from models.egret_attention_visual import egret_ppi
 import data_generator_attention_visual as data_generator
 from data_generator_attention_visual import graph_collate
 from feature_generator import ProtBERT_feature_generator, distance_and_angle_generator
@@ -79,7 +79,7 @@ def predict(model_file, root_dir):
                                               pin_memory=(torch.cuda.is_available()),
                                               num_workers=configs.num_workers, drop_last=False, collate_fn=graph_collate)
 
-    model = egat_ppi()
+    model = egret_ppi()
     pretrained_dict = torch.load(model_file)
     model_dict = model.state_dict()
 
@@ -101,7 +101,7 @@ if __name__ == '__main__':
     ProtBERT_feature_generator.generate_protbert_features(root_dir)
     t111 = time()
 
-    model_dir = "{}/models/egat_model_weight.dat".format(root_dir)
+    model_dir = "{}/models/egret_model_weight.dat".format(root_dir)
     predict(model_dir, root_dir)
     print('Prediction completed. Results saved at:', "{}/outputs/prediction_and_attention_scores.pkl".format(root_dir))
 

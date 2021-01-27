@@ -3,9 +3,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 
-class EGATLayer(nn.Module):
+class EGRETLayer(nn.Module):
     def __init__(self, in_dim, out_dim, edge_dim, use_bias, config_dict=None):
-        super(EGATLayer, self).__init__()
+        super(EGRETLayer, self).__init__()
         # experimental hyperparams
         self.apply_attention = True
         # self.use_edge_features = False
@@ -135,12 +135,12 @@ class EGATLayer(nn.Module):
         return g.ndata.pop('h'), g.ndata.pop('alpha')
 
 
-class MultiHeadEGATLayer(nn.Module):
+class MultiHeadEGRETLayer(nn.Module):
     def __init__(self, in_dim, out_dim, edge_dim, num_heads, use_bias, merge='cat', config_dict=None):
-        super(MultiHeadEGATLayer, self).__init__()
+        super(MultiHeadEGRETLayer, self).__init__()
         self.heads = nn.ModuleList()
         for i in range(num_heads):
-            self.heads.append(EGATLayer(in_dim, out_dim, edge_dim, use_bias, config_dict=config_dict)) #in_dim, out_dim, edge_dim, use_bias, config_dict=None
+            self.heads.append(EGRETLayer(in_dim, out_dim, edge_dim, use_bias, config_dict=config_dict)) #in_dim, out_dim, edge_dim, use_bias, config_dict=None
         self.merge = merge
 
     def forward(self, g, h):
