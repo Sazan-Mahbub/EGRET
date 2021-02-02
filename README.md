@@ -1,5 +1,5 @@
 # EGRET
-This repository contains the official implementation of our paper [*"EGRET: **E**dge Aggregated **Gr**aph Attention N**et**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*]<!--(https://www.biorxiv.org/content/10.1101/2020.11.07.372466v2).-->
+This repository contains the official implementation of our paper *"EGRET: **E**dge Aggregated **Gr**aph Attention N**et**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*<!--[*"EGRET: **E**dge Aggregated **Gr**aph Attention N**et**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*](https://www.biorxiv.org/content/10.1101/2020.11.07.372466v2).-->
 <!-- If you use any part of this repository, we shall be obliged if you cite [our paper](https://www.biorxiv.org/content/10.1101/2020.11.07.372466v2).-->
 
 # Usage
