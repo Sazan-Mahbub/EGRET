@@ -89,7 +89,10 @@ def predict(model_file, root_dir):
     model_dict.update(pretrained_dict)
     # 3. load the new state dict
     model.load_state_dict(model_dict)
-    model = model.cuda()
+    if torch.cuda.is_available():
+        model = model.cuda()
+    else:
+        model = model.cpu()
     test(model, test_loader, root_dir)
 
 
