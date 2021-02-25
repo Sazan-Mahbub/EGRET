@@ -85,7 +85,7 @@ python run_egret.py
 S. Mahbub and M. S. Bayzid, “Egret: Edge aggregated graph attention networks and
 transfer learning improve protein-protein interaction site prediction,” bioRxiv, 2021.
 
-## Bibtex:
+## BibtTeX:
 ```
 @article {Mahbub2020.11.07.372466,
 	author = {Mahbub, Sazan and Bayzid, Md Shamsuzzoha},
