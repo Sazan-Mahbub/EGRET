@@ -80,8 +80,12 @@ python run_egret.py
     print(attention_scores[protein_index][center_node])  
     ```
     
-<!---
+
 # Citation
+S. Mahbub and M. S. Bayzid, “Egret: Edge aggregated graph attention networks and
+transfer learning improve protein-protein interaction site prediction,” bioRxiv, 2021.
+
+## Bibtex:
 @article {Mahbub2020.11.07.372466,
 	author = {Mahbub, Sazan and Bayzid, Md Shamsuzzoha},
 	title = {EGRET: Edge Aggregated Graph Attention Networks and Transfer Learning Improve Protein-Protein Interaction Site Prediction},
@@ -94,4 +98,4 @@ python run_egret.py
 	eprint = {https://www.biorxiv.org/content/early/2021/02/10/2020.11.07.372466.full.pdf},
 	journal = {bioRxiv}
 }
---->
+
