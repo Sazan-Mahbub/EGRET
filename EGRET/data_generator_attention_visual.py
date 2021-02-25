@@ -70,7 +70,7 @@ class dataSet(data.Dataset):
             G.add_nodes(self.max_seq_len)
             neighborhood_indices = self.all_dist_matrix[id_idx]['dist_matrix'][:self.max_seq_len, :self.max_seq_len, 0] \
                                        .argsort()[:, 1:self.neighbourhood_size]
-            if neighborhood_indices.max() > 499 or neighborhood_indices.min() < 0:
+            if neighborhood_indices.max() > self.max_seq_len-1 or neighborhood_indices.min() < 0:
                 print(neighborhood_indices.max(), neighborhood_indices.min())
                 raise
             edge_feat = np.array([
