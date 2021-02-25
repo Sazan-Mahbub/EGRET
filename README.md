@@ -62,7 +62,7 @@ python run_egret.py
     protein_index = 0  
     print(graph_edges[protein_index])  
     ```
-    These commands will print a [*numpy array*](https://numpy.org/doc/stable/reference/generated/numpy.array.html) corresponding to the protein at index "0" of "protein_list.txt" file. Each row of this *numpy array* corresponds to a *neighborhood*, that contains the indices of the neighboring nodes (residues) of one residue (i.e. *the center of the neighborhood*). (please see [our paper]() for more details). This *center of the neighborhood* is the row count of the matrix. The following example command will print the *neighborhood* (neighboring residue indices) of the residue with index *2* -  
+    These commands will print a [*numpy array*](https://numpy.org/doc/stable/reference/generated/numpy.array.html) corresponding to the protein at index "0" of "protein_list.txt" file. Each row of this *numpy array* corresponds to a *neighborhood*, that contains the indices of the neighboring nodes (residues) of one residue (i.e. *the center of the neighborhood*). (please see [our paper](https://doi.org/10.1101/2020.11.07.372466) for more details). This *center of the neighborhood* is the row count of the matrix. The following example command will print the *neighborhood* (neighboring residue indices) of the residue with index *2* -  
     ```python
     center_node = 2  
     print(graph_edges[protein_index][center_node])  
@@ -82,5 +82,16 @@ python run_egret.py
     
 <!---
 # Citation
-*"EGRET: **E**dge Aggregated **Gr**aph Attention N**et**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*.
+@article {Mahbub2020.11.07.372466,
+	author = {Mahbub, Sazan and Bayzid, Md Shamsuzzoha},
+	title = {EGRET: Edge Aggregated Graph Attention Networks and Transfer Learning Improve Protein-Protein Interaction Site Prediction},
+	elocation-id = {2020.11.07.372466},
+	year = {2021},
+	doi = {10.1101/2020.11.07.372466},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Motivation Protein-protein interactions are central to most biological processes. However, reliable identification of protein-protein interaction (PPI) sites using conventional experimental methods is slow and expensive. Therefore, great efforts are being put into computational methods to identify PPI sites.Results We present EGRET, a highly accurate deep learning based method for PPI site prediction, where we have introduced a novel edge aggregated graph attention network to effectively leverage the structural information. We, for the first time, have used transfer learning in PPI site prediction. Our proposed edge aggregated network, together with transfer learning, has achieved remarkable improvement over the best alternate methods. Furthermore, EGRET offers a more interpretable framework than the typical black-box deep neural networks.Availability EGRET is freely available as an open source project at https://github.com/Sazan-Mahbub/EGRET.Contact shams_bayzid{at}cse.buet.ac.bdCompeting Interest StatementThe authors have declared no competing interest.},
+	URL = {https://www.biorxiv.org/content/early/2021/02/10/2020.11.07.372466},
+	eprint = {https://www.biorxiv.org/content/early/2021/02/10/2020.11.07.372466.full.pdf},
+	journal = {bioRxiv}
+}
 --->
