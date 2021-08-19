@@ -103,7 +103,7 @@ class dataSet(data.Dataset):
             prit('source and destination array should have been of the same length: src and dst:', len(src), len(dst))
             raise Exception
         G.add_edges(src, dst)
-        G.edata['ex'] = np.array(temp_edge_features)
+        G.edata['ex'] = torch.tensor(temp_edge_features)
 
 
 
