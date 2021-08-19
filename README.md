@@ -80,7 +80,7 @@ python run_egret.py
     print(attention_scores[protein_index][center_node])  
     ```
 
-### Please reach out if you face any issues while trying to run the code!
+#### Please reach out if you face any issues while trying to run the code!
 
 # Citation
 S. Mahbub and M. S. Bayzid, “Egret: Edge aggregated graph attention networks and
