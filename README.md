@@ -5,10 +5,10 @@ If you use any part of this repository, we shall be obliged if you cite [our pap
 
 # Usage
 ## Pytorch and DGL installation
-We implemented our method using PyTorch and Deep Graph Library (DGL). Please install these two for successfully running our code. Necessary installation instructions are available at the following links-
-1. [Python 3.6 or later version](https://www.python.org/downloads/)
-2. [PyTorch](https://pytorch.org/get-started/locally/#start-locally)
-3. [Deep Graph Library](https://www.dgl.ai/pages/start.html)
+We implemented our method using PyTorch and Deep Graph Library (DGL). Please install these two for successfully running our code. Necessary installation instructions are available at the following links (Within the parentheses, I am also mentioning the versions that were used during our experiments)-
+1. [Python 3.7.x](https://www.python.org/downloads/)
+2. [PyTorch 1.6.x](https://pytorch.org/get-started/locally/#start-locally)
+3. [Deep Graph Library 0.4.x](https://docs.dgl.ai/en/0.4.x/install)
 
 ## Download pretrained-model weights:
 ### ProtBERT model weight
@@ -79,7 +79,8 @@ python run_egret.py
     center_node = 2  
     print(attention_scores[protein_index][center_node])  
     ```
-    
+
+### Please reach out if you face any issues while trying to run the code!
 
 # Citation
 S. Mahbub and M. S. Bayzid, “Egret: Edge aggregated graph attention networks and
