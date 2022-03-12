@@ -1,5 +1,5 @@
 # EGRET
-This repository contains the official implementation of our paper [*"EGRET: **E**dge Aggregated **GR**aph Attention N**ET**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*](https://doi.org/10.1093/bib/bbab578).
+This repository contains the official implementation of our paper [*"EGRET: **E**dge Aggregated **GR**aph Attention N**ET**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*](https://doi.org/10.1093/bib/bbab578) published at the journal [Briefings in Bioinformatics](https://academic.oup.com/bib).
 
 If you use any part of this repository, we shall be obliged if you cite [our paper](https://doi.org/10.1093/bib/bbab578).
 
