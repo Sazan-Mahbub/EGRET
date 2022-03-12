@@ -83,8 +83,7 @@ python run_egret.py
 #### Please reach out if you face any issues while trying to run the code!
 
 # Citation
-S. Mahbub and M. S. Bayzid, “Egret: Edge aggregated graph attention networks and
-transfer learning improve protein-protein interaction site prediction,” bioRxiv, 2021.
+Sazan Mahbub, Md Shamsuzzoha Bayzid, EGRET: edge aggregated graph attention networks and transfer learning improve protein–protein interaction site prediction, Briefings in Bioinformatics, 2022;, bbab578, https://doi.org/10.1093/bib/bbab578
 
 ## BibTeX:
 ```
