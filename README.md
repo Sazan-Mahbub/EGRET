@@ -1,7 +1,7 @@
 # EGRET
-This repository contains the official implementation of our paper [*"EGRET: **E**dge Aggregated **Gr**aph Attention N**et**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*](https://doi.org/10.1101/2020.11.07.372466).
+This repository contains the official implementation of our paper [*"EGRET: **E**dge Aggregated **GR**aph Attention N**ET**works and Transfer Learning Improve Protein-Protein Interaction Site Prediction"*](https://doi.org/10.1093/bib/bbab578).
 
-If you use any part of this repository, we shall be obliged if you cite [our paper](https://doi.org/10.1101/2020.11.07.372466).
+If you use any part of this repository, we shall be obliged if you cite [our paper](https://doi.org/10.1093/bib/bbab578).
 
 # Usage
 ## Pytorch and DGL installation
@@ -88,16 +88,18 @@ transfer learning improve protein-protein interaction site prediction,” bioRxi
 
 ## BibTeX:
 ```
-@article {Mahbub2020.11.07.372466,
-	author = {Mahbub, Sazan and Bayzid, Md Shamsuzzoha},
-	title = {EGRET: Edge Aggregated Graph Attention Networks and Transfer Learning Improve Protein-Protein Interaction Site Prediction},
-	elocation-id = {2020.11.07.372466},
-	year = {2021},
-	doi = {10.1101/2020.11.07.372466},
-	publisher = {Cold Spring Harbor Laboratory},
-	abstract = {Motivation Protein-protein interactions are central to most biological processes. However, reliable identification of protein-protein interaction (PPI) sites using conventional experimental methods is slow and expensive. Therefore, great efforts are being put into computational methods to identify PPI sites.Results We present EGRET, a highly accurate deep learning based method for PPI site prediction, where we have introduced a novel edge aggregated graph attention network to effectively leverage the structural information. We, for the first time, have used transfer learning in PPI site prediction. Our proposed edge aggregated network, together with transfer learning, has achieved remarkable improvement over the best alternate methods. Furthermore, EGRET offers a more interpretable framework than the typical black-box deep neural networks.Availability EGRET is freely available as an open source project at https://github.com/Sazan-Mahbub/EGRET.Contact shams_bayzid{at}cse.buet.ac.bdCompeting Interest StatementThe authors have declared no competing interest.},
-	URL = {https://www.biorxiv.org/content/early/2021/02/10/2020.11.07.372466},
-	eprint = {https://www.biorxiv.org/content/early/2021/02/10/2020.11.07.372466.full.pdf},
-	journal = {bioRxiv}
+@article{10.1093/bib/bbab578,
+    author = {Mahbub, Sazan and Bayzid, Md Shamsuzzoha},
+    title = "{EGRET: edge aggregated graph attention networks and transfer learning improve protein–protein interaction site prediction}",
+    journal = {Briefings in Bioinformatics},
+    year = {2022},
+    month = {01},
+    abstract = "{Protein–protein interactions (PPIs) are central to most biological processes. However, reliable identification of PPI sites using conventional experimental methods is slow and expensive. Therefore, great efforts are being put into computational methods to identify PPI sites.We present Edge Aggregated GRaph Attention NETwork (EGRET), a highly accurate deep learning-based method for PPI site prediction, where we have used an edge aggregated graph attention network to effectively leverage the structural information. We, for the first time, have used transfer learning in PPI site prediction. Our proposed edge aggregated network, together with transfer learning, has achieved notable improvement over the best alternate methods. Furthermore, we systematically investigated EGRET’s network behavior to provide insights about the causes of its decisions.EGRET is freely available as an open source project at https://github.com/Sazan-Mahbub/EGRET.shams\_bayzid@cse.buet.ac.bd}",
+    issn = {1477-4054},
+    doi = {10.1093/bib/bbab578},
+    url = {https://doi.org/10.1093/bib/bbab578},
+    note = {bbab578},
+    eprint = {https://academic.oup.com/bib/advance-article-pdf/doi/10.1093/bib/bbab578/42350487/bbab578.pdf},
 }
+
 ```
