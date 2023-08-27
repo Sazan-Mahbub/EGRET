@@ -16,7 +16,7 @@ We implemented our method using PyTorch and Deep Graph Library (DGL). Please ins
 2. Place this weight-file in the folder "EGRET/inputs/ProtBert_model".
 If you use this pretrained model for your paper, please cite the paper [ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Deep Learning and High Performance Computing](https://www.biorxiv.org/content/10.1101/2020.07.12.199554v2)
 ### EGRET model weight
-1. Please download the pretrained model weight-file "egret_model_weight.dat" from [here](https://drive.google.com/file/d/1KsbJ6x8y_8YneO29d81khIhXwt57SWwz/view?usp=sharing).
+1. Please download the pretrained model weight-file "egret_model_weight.dat" from [here](https://drive.google.com/file/d/195Cs22CtuSZscqxARbAIgm1zFO_9rHr4/view?usp=drive_link).
 2. Place this weight-file in the folder "EGRET/models".
 
 ## Input Data
