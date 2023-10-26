@@ -37,6 +37,7 @@ def test(model, loader, root_dir):
         with torch.no_grad():
             if torch.cuda.is_available():
                 protbert_var = torch.autograd.Variable(protbert_data.cuda().float())
+                graph_batch = graph_batch.to('cuda')
                 graph_batch.edata['ex'] = torch.autograd.Variable(graph_batch.edata['ex'].cuda().float())
             else:
                 protbert_var = torch.autograd.Variable(protbert_data.float())
