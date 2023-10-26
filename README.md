@@ -8,7 +8,7 @@ If you use any part of this repository, we shall be obliged if you cite [our pap
 We implemented our method using PyTorch and Deep Graph Library (DGL). Please install these two for successfully running our code. Necessary installation instructions are available at the following links: <!--(Within the parentheses, I am also mentioning the versions that were used during our experiments)-->
 1. [Python 3.9.x](https://www.python.org/downloads/)
 2. [PyTorch 1.13.x](https://pytorch.org/get-started/locally/#start-locally)
-3. [Deep Graph Library 1.1.x](https://docs.dgl.ai/en/0.4.x/install)
+3. [Deep Graph Library 1.1.x](https://docs.dgl.ai/en/1.1.x/install)
 
 ## Download pretrained-model weights:
 ### ProtBERT model weight
