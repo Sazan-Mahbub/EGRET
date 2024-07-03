@@ -12,7 +12,7 @@ class EGRETLayer(nn.Module):
         self.transform_edge_for_att_calc = False
         self.apply_attention_on_edge = False
         self.aggregate_edge = False ###
-        # self.edge_transform = False
+        self.edge_transform = True
         self.edge_dependent_attention = False ###
         self.self_loop = False # or skip connection
         self.self_node_transform = False and self.self_loop
@@ -23,7 +23,7 @@ class EGRETLayer(nn.Module):
           self.transform_edge_for_att_calc = config_dict['transform_edge_for_att_calc']
           self.apply_attention_on_edge = config_dict['apply_attention_on_edge']
           self.aggregate_edge = config_dict['aggregate_edge']
-          # self.edge_transform = config_dict['edge_transform']
+          self.edge_transform = config_dict['edge_transform']
           self.edge_dependent_attention = config_dict['edge_dependent_attention']
           self.self_loop = config_dict['self_loop'] # or skip connection
           self.self_node_transform = config_dict['self_node_transform'] and self.self_loop
@@ -39,11 +39,14 @@ class EGRETLayer(nn.Module):
         self.bn_fc = nn.BatchNorm1d(num_features=out_dim, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) if self.use_batch_norm else nn.Identity()
         # equation (2)
         if self.edge_dependent_attention:
-          self.attn_fc = nn.Linear(2 * out_dim+edge_dim, 1, bias=use_bias)
+          self.attn_fc = nn.Linear(2 * out_dim + edge_dim, 1, bias=use_bias)
         else:
           self.attn_fc = nn.Linear(2 * out_dim, 1, bias=use_bias)
         if self.aggregate_edge:
-          self.fc_edge = nn.Linear(edge_dim, out_dim, bias=use_bias)
+          if self.edge_transform:
+            self.fc_edge = nn.Linear(2 * out_dim + edge_dim, out_dim, bias=use_bias)
+          else:
+            self.fc_edge = nn.Linear(edge_dim, out_dim, bias=use_bias)
           self.bn_fc_edge = nn.BatchNorm1d(num_features=out_dim, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) if self.use_batch_norm else nn.Identity()
         if self.self_node_transform:
           self.fc_self = nn.Linear(in_dim, out_dim, bias=use_bias)
@@ -77,12 +80,16 @@ class EGRETLayer(nn.Module):
         a = self.attn_fc(z2)
 
         if self.aggregate_edge:
-            ez = self.bn_fc_edge(self.fc_edge(edges.data['ex']))
+            if self.edge_transform:
+              ez = self.bn_fc_edge(self.fc_edge(torch.cat([edges.src['z'], edges.dst['z'], edges.data['ex']], dim=1))) ## ez: updated edge features
+            else:
+              # raise Exception ## TODO: experimental. 
+              ez = self.bn_fc_edge(self.fc_edge(edges.data['ex']))
             return {'e': F.leaky_relu(a, negative_slope=0.2), 'ez': ez}
           # else:
           #   ez = edges.data['ex']
 
-        return {'e': F.leaky_relu(a)}
+        return {'e': F.leaky_relu(a, negative_slope=0.2)}
 
     def message_func(self, edges):
         # message UDF for equation (3) & (4)
@@ -171,7 +178,7 @@ config_dict = {
     'transform_edge_for_att_calc': True, # whether the edge features will be linearly transformed before being used for attention score calculations.
     'apply_attention_on_edge': True, # whether the calculated attention scores will be used for a weighted sum of the edge-features.
     'aggregate_edge' : True, # whether the edges will also be aggregated with the central node.
-    # 'edge_transform' : True, # must be True for aggregate_edge.
+    'edge_transform' : False, # must be True for updating edge features.
     'edge_dependent_attention' : True, # whether edge-features will be used for attention score calculation.
     'self_loop' : False, # or skip connection.
     'self_node_transform' : True, # for self_loop (or skip connection), whether we will use a separate linear transformation of the central note
