@@ -57,7 +57,7 @@ def test(model, loader, root_dir):
                 protein_infos_.append(protein_info[i])
                 result.append(output[i][:__len_limit__])
                 attention_scores.append(head_attn_scores[i, :__len_limit__, :])
-                edges.append(graph.edges()[0].view(__len_limit__, 20).numpy())
+                edges.append(graph.edges()[0].cpu().view(__len_limit__, 20).numpy())
 
     predict_result = {}
 
