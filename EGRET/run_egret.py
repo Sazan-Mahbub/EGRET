@@ -25,6 +25,8 @@ from feature_generator import ProtBERT_feature_generator, distance_and_angle_gen
 configs = DefaultConfig()
 THREADHOLD = 0.2
 
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 def test(model, loader, root_dir):
     global configs
     model.eval()
@@ -35,14 +37,9 @@ def test(model, loader, root_dir):
 
     for batch_idx, (protbert_data, graph_batch, protein_info) in enumerate(loader):
         with torch.no_grad():
-            if torch.cuda.is_available():
-                protbert_var = torch.autograd.Variable(protbert_data.cuda().float())
-                graph_batch = graph_batch.to('cuda')
-                graph_batch.edata['ex'] = torch.autograd.Variable(graph_batch.edata['ex'].cuda().float())
-            else:
-                protbert_var = torch.autograd.Variable(protbert_data.float())
-                graph_batch.edata['ex'] = torch.autograd.Variable(graph_batch.edata['ex'].float())
-
+            protbert_var = protbert_data.to(DEVICE).float()
+            graph_batch = dgl.to_float(graph_batch.to(DEVICE))
+            
             # compute output
             # t0 = time.time()
             output, head_attn_scores = model(protbert_var, graph_batch)
